@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "graph-minimal"
+name = "graph_builder"
 version = "0.1.0"
 description = ""
 authors = ["Przemyslaw Sadowski <przemyslaw.sadowski@addepto.com>"]

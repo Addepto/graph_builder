@@ -204,7 +204,7 @@ def enrich_from_table(
                     print(o.name, o.attributes[label1])
                 else:
                     print(o.name, o.attributes[label1])
-                    
+
 
 # NOTE: hardcoded that from a table
 def find_enrichment(new_manager, entity_name, collection="default"):

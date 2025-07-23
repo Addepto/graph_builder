@@ -1,0 +1,1 @@
+from entity_graph.graph_extractor.entities_graph_extractor import EntitiesGraphExtractor
