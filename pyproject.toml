@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "graph-minimal"
+version = "0.1.0"
+description = ""
+authors = ["Przemyslaw Sadowski <przemyslaw.sadowski@addepto.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.3.1"
+loguru = "^0.7.3"
+pydantic-settings = "^2.10.1"
+rich = "^14.0.0"
+pdfplumber = "^0.11.7"
+pymupdf = "^1.26.3"
+msoffcrypto-tool = "^5.4.2"
+xlrd = "^2.0.2"
+openpyxl = "^3.1.5"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "^6.0.1"
+jupyter = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

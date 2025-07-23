@@ -1,0 +1,5 @@
+data/test_data
+.vscode
+*__pycache__*
+*.ipynb_checkpoint*
+notebooks/test*
