@@ -96,7 +96,7 @@ class EntitiesGraphExtractor:
 
     def _add_identifiers(self):
         # Create new identifiers
-        for name, table_name, cols, fill_values in self.extraction_plan["identifiers"]:
+        for name, table_name, cols, fill_values in self.extraction_plan.get("identifiers", []):
             new_id(
                 self.entities_graph_manager,
                 name,
@@ -107,9 +107,7 @@ class EntitiesGraphExtractor:
             )
 
         # Link identifiers
-        for name, table_name, cols, fill_values in self.extraction_plan[
-            "identifiers_links"
-        ]:
+        for name, table_name, cols, fill_values in self.extraction_plan.get("identifiers_links", []):
             link_id(
                 self.entities_graph_manager,
                 name,
@@ -120,9 +118,7 @@ class EntitiesGraphExtractor:
             )
 
     def _make_instances(self):
-        for id_name, table_name, do_hierarchy, override_cols in self.extraction_plan[
-            "instances_creation"
-        ]:
+        for id_name, table_name, do_hierarchy, override_cols in self.extraction_plan.get("instances_creation", []):
             # Make sure to pass the collection parameter
             create_instances(
                 self.entities_graph_manager,
@@ -138,7 +134,7 @@ class EntitiesGraphExtractor:
         Perform enrichment matching based on the extraction plan.
         Uses self.collection for collection parameter.
         """
-        for id_name, attr_name, key in self.extraction_plan["enrichment_links"]:
+        for id_name, attr_name, key in self.extraction_plan.get("enrichment_links", []):
             # Pass the collection parameter
             add_enrichment_links(
                 self.entities_graph_manager,
@@ -148,9 +144,7 @@ class EntitiesGraphExtractor:
                 collection=self.collection,
             )
 
-        for table_name, label1, label2, new_labels in self.extraction_plan[
-            "enrichments"
-        ]:
+        for table_name, label1, label2, new_labels in self.extraction_plan.get("enrichments", []):
             # Pass the collection parameter
             enrich_from_table_name(
                 self.entities_graph_manager,
@@ -166,7 +160,7 @@ class EntitiesGraphExtractor:
         Perform enrichment with models based on the extraction plan.
         Uses self.collection for collection parameter.
         """
-        for id_name in self.extraction_plan["identifiers_to_enrich"]:
+        for id_name in self.extraction_plan.get("identifiers_to_enrich", []):
             # Pass the collection parameter
             enrich_identifier_values(
                 self.entities_graph_manager, id_name, collection=self.collection
@@ -239,13 +233,12 @@ class EntitiesGraphExtractor:
         print(
             f"Name map has {len(self.entities_graph_manager.get_name_map(collection=self.collection))} entries in collection '{self.collection}'"
         )
-
-        for linking_column in self.extraction_plan["linking_columns"]:
+        join_count = 0
+        for linking_column in self.extraction_plan.get("linking_columns", []):
             print(
                 f"Processing linking column: {linking_column} in collection '{self.collection}'"
             )
 
-            join_count = 0
             # Filter entities by collection
             entities = [
                 e

@@ -58,6 +58,7 @@ def split_column(df, column_name, sep):
 
 def get_all_matching_tables(
     config: TableFromHeaderExtracionConfig,
+    debug: bool = False, 
 ):
     """
     Extracts all tables from a PDF file that match a given condition.
@@ -90,6 +91,11 @@ def get_all_matching_tables(
             for table_number, table in enumerate(tables, start=1):
                 if table_test(table):
                     oktables.append(table)
+                elif debug:
+                    print("not ok", table[0])
+
+    if debug:
+        return oktables
 
     all_elements = pd.concat(
         [pd.DataFrame(okt[1:], columns=okt[0]) for okt in oktables], ignore_index=True
