@@ -39,7 +39,9 @@ class EntitiesGraphExtractor:
         self.local = False
         self.collection = collection
 
-    def load_table_from_file(self, source, filename, table_name, data_type):
+    def load_table_from_file(
+        self, source: str | dict, filename: str, table_name: str, data_type: str
+    ):
         self._add_file_node(filename)
         self._add_table(self._read_source(source), filename, table_name, data_type)
         return
@@ -96,7 +98,9 @@ class EntitiesGraphExtractor:
 
     def _add_identifiers(self):
         # Create new identifiers
-        for name, table_name, cols, fill_values in self.extraction_plan.get("identifiers", []):
+        for name, table_name, cols, fill_values in self.extraction_plan.get(
+            "identifiers", []
+        ):
             new_id(
                 self.entities_graph_manager,
                 name,
@@ -107,7 +111,9 @@ class EntitiesGraphExtractor:
             )
 
         # Link identifiers
-        for name, table_name, cols, fill_values in self.extraction_plan.get("identifiers_links", []):
+        for name, table_name, cols, fill_values in self.extraction_plan.get(
+            "identifiers_links", []
+        ):
             link_id(
                 self.entities_graph_manager,
                 name,
@@ -118,7 +124,12 @@ class EntitiesGraphExtractor:
             )
 
     def _make_instances(self):
-        for id_name, table_name, do_hierarchy, override_cols in self.extraction_plan.get("instances_creation", []):
+        for (
+            id_name,
+            table_name,
+            do_hierarchy,
+            override_cols,
+        ) in self.extraction_plan.get("instances_creation", []):
             # Make sure to pass the collection parameter
             create_instances(
                 self.entities_graph_manager,
@@ -144,7 +155,9 @@ class EntitiesGraphExtractor:
                 collection=self.collection,
             )
 
-        for table_name, label1, label2, new_labels in self.extraction_plan.get("enrichments", []):
+        for table_name, label1, label2, new_labels in self.extraction_plan.get(
+            "enrichments", []
+        ):
             # Pass the collection parameter
             enrich_from_table_name(
                 self.entities_graph_manager,
@@ -301,7 +314,7 @@ class EntitiesGraphExtractor:
                 collection=self.collection,
             )
 
-    def extract_entities_graph(self, stages, extraction_plan_config=None):
+    def extract_entities_graph_by_stage(self, stages, extraction_plan_config=None):
         self._make_extraction_plan(extraction_plan_config)
         # Define a dictionary mapping stage names to their corresponding methods
         stages_methods = {
@@ -326,7 +339,9 @@ class EntitiesGraphExtractor:
         return self
 
     # Update the extract_entities_graph2 method to check for completed steps
-    def extract_entities_graph2(self, extraction_plan_config=None):
+    def extract_entities_graph(
+        self, extraction_plan_config: dict[str, list[tuple]] | None = None
+    ):
         """
         Extract entities graph - second phase.
 
@@ -364,3 +379,11 @@ class EntitiesGraphExtractor:
             self.stages_done.add("_instances_context")
 
         return self
+
+    def export_graph(self) -> tuple[list[str], list[tuple[str, str]], dict[str, dict]]:
+        """
+        Export objects sub-graph to json.
+
+        :return: Tuple of nodes, edges, and metadata
+        """
+        return self.entities_graph_manager.export_objects_graph(collection="default")
