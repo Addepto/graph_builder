@@ -1,5 +1,7 @@
-data/test_data
+data/
 .vscode
 *__pycache__*
 *.ipynb_checkpoint*
 notebooks/test*
+
+.venv
