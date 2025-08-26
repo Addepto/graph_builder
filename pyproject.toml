@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Przemyslaw Sadowski <przemyslaw.sadowski@addepto.com>"]
 readme = "README.md"
+packages = [{ include = "entity_graph" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
