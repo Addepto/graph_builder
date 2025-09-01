@@ -11,4 +11,4 @@ app.include_router(entity_graph.router)
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to the FastAPI Auth Boilerplate!"}
+    return {"message": "Welcome to the entity graph API!"}
