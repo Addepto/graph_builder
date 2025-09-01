@@ -34,7 +34,7 @@ config_logger = {
         ),
     },
     "loggers": {
-        "cvmatching": {
+        "entity_graph": {
             "level": "DEBUG",
         },
         "openai": {
