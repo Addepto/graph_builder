@@ -1,7 +1,9 @@
 # graph_builder
-Graph builder package. 
+
+Graph builder package.
 
 ## Installation
+
 Following good practices we suggest you create a separate virtual environment for working with Graph builder package.
 
 Note that the graph_builder requires python 3.12 or higher.
@@ -14,6 +16,7 @@ poetry install
 
 Note that this is a short example taken from `examples/example1.ipynb`, for more information please
 refer to it.
+
 ```python
 from entity_graph.graph_extractor.entities_graph_extractor import EntitiesGraphExtractor
 
@@ -32,8 +35,30 @@ config = {
 # Load table to graph
 extractor.load_table_from_file(
     config,
-    "coffee_machines.pdf", 
-    "Machines", 
+    "coffee_machines.pdf",
+    "Machines",
     "instances",
 )
 ```
+
+## graph_builder FastApi
+
+In the folder containing the `docker-compose.yml` file, run the commands:
+
+```
+docker compose build
+```
+
+Once the image is built:
+
+```
+docker compose up
+```
+
+Make sure to create the `.env` file in the directory based on the `.env_example` file with the needed environmental values.
+
+## Important notes
+
+In the current version of the application, graphs are retained between requests but not preserved across API restarts.
+
+This means that each time the API is restarted, the graphs must be rebuilt.

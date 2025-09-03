@@ -5,3 +5,6 @@ data/
 notebooks/test*
 
 .venv
+.env
+
+.DS_store

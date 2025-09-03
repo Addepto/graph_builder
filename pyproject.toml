@@ -17,6 +17,9 @@ pymupdf = "^1.26.3"
 msoffcrypto-tool = "^5.4.2"
 xlrd = "^2.0.2"
 openpyxl = "^3.1.5"
+fastapi = "^0.116.1"
+uvicorn = "^0.35.0"
+python-multipart = "^0.0.20"
 
 
 [tool.poetry.group.dev.dependencies]
