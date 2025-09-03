@@ -69,11 +69,11 @@ async def export_graph():
 
 
 @router.get("/list-relations-for-entity")
-async def list_relations_for_entity(entity_id: str):
+async def list_relations_for_entity(entity_name: str):
     """List all relations for a specific entity."""
     try:
-        relations = extractor.entities_graph_manager.find_entity(entity_id).relations
-        return {"entity_id": entity_id, "relations": relations}
+        relations = extractor.entities_graph_manager.find_entity(entity_name).relations
+        return {"entity_name": entity_name, "relations": relations}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to list relations for entity: {e}")
 
