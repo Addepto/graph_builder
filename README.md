@@ -56,3 +56,9 @@ docker compose up
 ```
 
 Make sure to create the `.env` file in the directory based on the `.env_example` file with the needed environmental values.
+
+## Important notes
+
+In the current version of the application, graphs are retained between requests but not preserved across API restarts.
+
+This means that each time the API is restarted, the graphs must be rebuilt.
