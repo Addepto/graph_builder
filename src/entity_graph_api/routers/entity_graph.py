@@ -1,12 +1,11 @@
 import os
+from src.entity_graph_api.config import UPLOAD_DIR
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from src.entity_graph_api.models.entity_graph import LoadTableRequest, ExtractEntitiesRequest
 from entity_graph.graph_extractor.entities_graph_extractor import EntitiesGraphExtractor
 
 extractor = EntitiesGraphExtractor()
 entities = extractor.entities_graph_manager.entities
-
-UPLOAD_DIR = "/app/uploads"
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
@@ -46,7 +45,6 @@ async def load_table(request: LoadTableRequest):
         return {"message": "Table loaded successfully", "table_name": request.table_name}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to load table: {e}")
-
 
 @router.post("/extract-entities")
 async def extract_entities(request: ExtractEntitiesRequest):

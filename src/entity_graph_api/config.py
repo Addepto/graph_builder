@@ -36,6 +36,8 @@ def setup_logger(name: str) -> logging.Logger:
 
 URL = Annotated[AnyUrl, AfterValidator(str)]
 
+UPLOAD_DIR = "/app/uploads"
+
 # Custom StrEnum is more handy than using integers that represent logging levels
 class LoggingLevels(StrEnum):
     DEBUG = "DEBUG"
@@ -43,8 +45,6 @@ class LoggingLevels(StrEnum):
     WARNING = "WARNING"
     ERROR = "ERROR"
     CRITICAL = "CRITICAL"
-
-
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
