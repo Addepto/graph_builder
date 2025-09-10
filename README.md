@@ -40,47 +40,27 @@ ContextClue Graph Builder goes beyond raw graph extraction—it powers enterpris
 
 1. Industrial Engineering & Manufacturing
 
-Convert CAD, ERP, PLM, and planning data into unified, searchable knowledge graphs.
-
-Enable digital twin navigation: interactive exploration of components, processes, and relationships.
-
-Provide graph-based operational intelligence for predictive performance and system optimization.
-
-Proven impact: A German automotive company achieved 40% faster troubleshooting and 30% lower engineering costs by deploying graph-based systems.
+* Convert CAD, ERP, PLM, and planning data into unified, searchable knowledge graphs.
+* Enable digital twin navigation: interactive exploration of components, processes, and relationships.
+* Provide graph-based operational intelligence for predictive performance and system optimization.
 
 2. Maintenance, Repair & Operations (MRO)
 
-Automotive, aerospace, energy, and logistics sectors use ContextClue to:
-
-Reduce downtime with faster diagnostics.
-
-Support predictive maintenance.
-
-Increase efficiency of maintenance workflows.
+* Automotive, aerospace, energy, and logistics sectors use ContextClue to:
+    * Reduce downtime with faster diagnostics.
+    * Support predictive maintenance.
+    * Increase efficiency of maintenance workflows.
 
 3. Knowledge Assistants
 
-Integrate with chat platforms like Slack to build internal assistants.
+* Integrate with chat platforms like Slack to build internal assistants.
+* Example: Addeptalk (powered by ContextClue) connects Google Drive docs to Slack, enabling employees to ask natural-language questions and receive contextual answers.
 
-Example: Addeptalk (powered by ContextClue) connects Google Drive docs to Slack, enabling employees to ask natural-language questions and receive contextual answers.
+4. Domain-Specific Applications
 
-4. Conversational Analytics & Summarization
-
-Automate document summarization and semantic search.
-
-Generate business reports directly from raw data.
-
-Query SQL databases using natural language—empowering non-technical teams.
-
-5. Domain-Specific Applications
-
-Marketing & Sales: Campaign optimization, customer segmentation, KPI tracking, forecasting.
-
-Finance & Legal: Compliance document automation, audit preparation.
-
-Healthcare & Research: Extract structured knowledge from scientific papers and clinical reports.
-
-Developers & IT: Summarize technical docs, generate structured code knowledge, power RAG-based bots.
+* Finance & Legal: Compliance document automation, audit preparation.
+* Healthcare & Research: Extract structured knowledge from scientific papers and clinical reports.
+* Developers & IT: Summarize technical docs, generate structured code knowledge, power RAG-based bots.
 
 
 ## Installation
