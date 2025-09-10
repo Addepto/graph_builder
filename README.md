@@ -1,6 +1,36 @@
 # graph_builder
 
-Graph builder package.
+Graph Builder
+
+Graph Builder is an open-source toolkit for extracting structured knowledge graphs from documents and tabular data.
+It enables you to transform raw data into graph structures for further analysis, visualization, and knowledge discovery.
+
+## Feaatures
+
+✨ Features
+
+📄 Extract tables from documents and load them into a graph.
+
+⚙️ Customizable extraction configurations (headers, file paths, entity names).
+
+🔄 FastAPI integration for serving graph extraction as a service.
+
+🗂️ Graphs are retained between requests during runtime.
+
+🚀 Future roadmap includes:
+
+    Automatic header extraction
+    
+    Smarter chunking and embeddings
+    
+    Database + vector database integration
+    
+    Advanced relationship discovery
+    
+    Knowledge graph visualization
+    
+    Chatbot + Retrieval-Augmented Generation (RAG)
+
 
 ## Installation
 
@@ -62,3 +92,21 @@ Make sure to create the `.env` file in the directory based on the `.env_example`
 In the current version of the application, graphs are retained between requests but not preserved across API restarts.
 
 This means that each time the API is restarted, the graphs must be rebuilt.
+
+
+## Roadmap
+
+📌 Roadmap
+
+ * Automatic header extraction (semantic segmentation + separators)
+
+ Improved data chunking and embeddings
+
+ Database and vector database infrastructure
+
+ Advanced relational analysis between sources
+
+ Interactive knowledge graph visualization
+
+ Integrated chatbot with RAG
+
