@@ -137,7 +137,7 @@ This means that each time the API is restarted, the graphs must be rebuilt.
 
  * Advanced relational analysis between sources
 
- Interactive knowledge graph visualization
+ * Interactive knowledge graph visualization
 
 
 ## Contributing
