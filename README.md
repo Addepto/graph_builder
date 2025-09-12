@@ -25,7 +25,6 @@ Graphs persist between API calls while the service is running.
 * Integration with graph DBs and vector DBs
 * Relationship discovery across multiple data sources
 * Knowledge graph visualization dashboards
-* RAG-enabled chatbot & business assistants
 
 ## Business Use Cases
 
