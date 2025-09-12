@@ -21,15 +21,10 @@ Graphs persist between API calls while the service is running.
 🔮 Future Roadmap
 
 * Automatic header extraction (semantic + layout)
-
 * Smarter chunking & embeddings
-
 * Integration with graph DBs and vector DBs
-
 * Relationship discovery across multiple data sources
-
 * Knowledge graph visualization dashboards
-
 * RAG-enabled chatbot & business assistants
 
 ## Business Use Cases
