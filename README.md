@@ -20,7 +20,6 @@ Graphs persist between API calls while the service is running.
 
 🔮 Future Roadmap
 
-* Automatic header extraction (semantic + layout)
 * Smarter chunking & embeddings
 * Integration with graph DBs and vector DBs
 * Relationship discovery across multiple data sources
@@ -123,14 +122,9 @@ This means that each time the API is restarted, the graphs must be rebuilt.
 
 📌 Roadmap
 
- * Automatic header extraction (semantic segmentation + separators)
-
  * Improved data chunking and embeddings
-
  * Database and vector database infrastructure
-
  * Advanced relational analysis between sources
-
  * Interactive knowledge graph visualization
 
 
@@ -138,7 +132,7 @@ This means that each time the API is restarted, the graphs must be rebuilt.
 
 We welcome community contributions!
 
-Fork this repo
+_Fork this repo
 
 Create a branch (feature/my-feature)
 
@@ -148,7 +142,7 @@ Push branch (git push origin feature/my-feature)
 
 Open a Pull Request 🎉
 
-Please include tests for new functionality.
+Please include tests for new functionality._
 
  Integrated chatbot with RAG
 
